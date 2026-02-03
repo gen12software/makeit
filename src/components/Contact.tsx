@@ -78,17 +78,17 @@ export default function Contact() {
                             transition={{ duration: 0.8, delay: 0.2 }}
                             className="bg-white p-8 md:p-16 rounded-[40px] shadow-[0_40px_100px_-20px_rgba(0,0,0,0.05)] border border-brand-stone/10"
                         >
-                            <form className="space-y-12" onSubmit={(e) => e.preventDefault()}>
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+                            <form className="space-y-10 md:space-y-12" onSubmit={(e) => e.preventDefault()}>
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12">
                                     <div className="relative group">
                                         <input
                                             type="text"
                                             name="name"
                                             required
                                             placeholder=" "
-                                            className="peer w-full bg-transparent border-b-2 border-brand-black/10 py-4 text-xl font-black text-brand-black outline-none transition-all focus:border-brand-stone"
+                                            className="peer w-full bg-transparent border-b-2 border-brand-black/10 py-4 text-lg md:text-xl font-black text-brand-black outline-none transition-all focus:border-brand-stone"
                                         />
-                                        <label className="absolute left-0 top-4 text-brand-black/30 text-lg font-black uppercase tracking-widest transition-all peer-focus:-top-4 peer-focus:text-xs peer-focus:text-brand-stone peer-[:not(:placeholder-shown)]:-top-4 peer-[:not(:placeholder-shown)]:text-xs">
+                                        <label className="absolute left-0 top-4 text-brand-black/30 text-base md:text-lg font-black uppercase tracking-widest transition-all peer-focus:-top-4 peer-focus:text-xs peer-focus:text-brand-stone peer-[:not(:placeholder-shown)]:-top-4 peer-[:not(:placeholder-shown)]:text-xs">
                                             Nombre
                                         </label>
                                     </div>
@@ -99,9 +99,9 @@ export default function Contact() {
                                             name="email"
                                             required
                                             placeholder=" "
-                                            className="peer w-full bg-transparent border-b-2 border-brand-black/10 py-4 text-xl font-black text-brand-black outline-none transition-all focus:border-brand-stone"
+                                            className="peer w-full bg-transparent border-b-2 border-brand-black/10 py-4 text-lg md:text-xl font-black text-brand-black outline-none transition-all focus:border-brand-stone"
                                         />
-                                        <label className="absolute left-0 top-4 text-brand-black/30 text-lg font-black uppercase tracking-widest transition-all peer-focus:-top-4 peer-focus:text-xs peer-focus:text-brand-stone peer-[:not(:placeholder-shown)]:-top-4 peer-[:not(:placeholder-shown)]:text-xs">
+                                        <label className="absolute left-0 top-4 text-brand-black/30 text-base md:text-lg font-black uppercase tracking-widest transition-all peer-focus:-top-4 peer-focus:text-xs peer-focus:text-brand-stone peer-[:not(:placeholder-shown)]:-top-4 peer-[:not(:placeholder-shown)]:text-xs">
                                             Email
                                         </label>
                                     </div>
@@ -112,9 +112,9 @@ export default function Contact() {
                                         type="text"
                                         name="subject"
                                         placeholder=" "
-                                        className="peer w-full bg-transparent border-b-2 border-brand-black/10 py-4 text-xl font-black text-brand-black outline-none transition-all focus:border-brand-stone"
+                                        className="peer w-full bg-transparent border-b-2 border-brand-black/10 py-4 text-lg md:text-xl font-black text-brand-black outline-none transition-all focus:border-brand-stone"
                                     />
-                                    <label className="absolute left-0 top-4 text-brand-black/30 text-lg font-black uppercase tracking-widest transition-all peer-focus:-top-4 peer-focus:text-xs peer-focus:text-brand-stone peer-[:not(:placeholder-shown)]:-top-4 peer-[:not(:placeholder-shown)]:text-xs">
+                                    <label className="absolute left-0 top-4 text-brand-black/30 text-base md:text-lg font-black uppercase tracking-widest transition-all peer-focus:-top-4 peer-focus:text-xs peer-focus:text-brand-stone peer-[:not(:placeholder-shown)]:-top-4 peer-[:not(:placeholder-shown)]:text-xs">
                                         Interés (Marca, Foto, Estrategia...)
                                     </label>
                                 </div>
@@ -124,9 +124,9 @@ export default function Contact() {
                                         name="message"
                                         rows={2}
                                         placeholder=" "
-                                        className="peer w-full bg-transparent border-b-2 border-brand-black/10 py-4 text-xl font-black text-brand-black outline-none transition-all focus:border-brand-stone resize-none"
+                                        className="peer w-full bg-transparent border-b-2 border-brand-black/10 py-4 text-lg md:text-xl font-black text-brand-black outline-none transition-all focus:border-brand-stone resize-none"
                                     />
-                                    <label className="absolute left-0 top-4 text-brand-black/30 text-lg font-black uppercase tracking-widest transition-all peer-focus:-top-4 peer-focus:text-xs peer-focus:text-brand-stone peer-[:not(:placeholder-shown)]:-top-4 peer-[:not(:placeholder-shown)]:text-xs">
+                                    <label className="absolute left-0 top-4 text-brand-black/30 text-base md:text-lg font-black uppercase tracking-widest transition-all peer-focus:-top-4 peer-focus:text-xs peer-focus:text-brand-stone peer-[:not(:placeholder-shown)]:-top-4 peer-[:not(:placeholder-shown)]:text-xs">
                                         Tu Mensaje
                                     </label>
                                 </div>

@@ -5,8 +5,8 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
     return (
-        <section id="home" className="relative h-screen min-h-[700px] flex items-center pt-20 overflow-hidden bg-background">
-            <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center w-full">
+        <section id="home" className="relative min-h-screen flex items-center pt-32 pb-12 lg:pt-20 overflow-hidden bg-background">
+            <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -22,14 +22,14 @@ export default function Hero() {
                         Make it real.
                     </motion.div>
 
-                    <h1 className="text-[10vw] sm:text-[8vw] lg:text-[7vw] font-black text-brand-black leading-[0.82] tracking-[-0.08em] mb-10">
+                    <h1 className="text-[14vw] sm:text-[10vw] lg:text-[7vw] font-black text-brand-black leading-[0.85] tracking-[-0.08em] mb-8 lg:mb-10">
                         CREATIVE MINDS, <br />
                         IMPACTFUL <br />
                         BRANDS.
                     </h1>
 
                     <div className="flex flex-col md:flex-row gap-8 items-start md:items-center">
-                        <p className="text-xl md:text-2xl text-brand-black/70 font-sans max-w-lg leading-relaxed">
+                        <p className="text-lg md:text-2xl text-brand-black/70 font-sans max-w-lg leading-relaxed">
                             En MAKE IT potenciamos marcas a través de estrategias creativas y diseño de alto impacto.
                         </p>
                         <button className="px-10 py-5 bg-brand-black text-white rounded-full font-black text-base hover:bg-brand-stone transition-all transform hover:scale-105 active:scale-95 shadow-xl uppercase tracking-widest whitespace-nowrap">
@@ -42,7 +42,7 @@ export default function Hero() {
                     initial={{ opacity: 0, scale: 0.9, x: 50 }}
                     animate={{ opacity: 1, scale: 1, x: 0 }}
                     transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
-                    className="lg:col-span-12 xl:col-span-4 relative h-[450px] lg:h-[650px] w-full mt-8 lg:mt-0"
+                    className="lg:col-span-12 xl:col-span-4 relative h-[350px] sm:h-[450px] lg:h-[650px] w-full mt-8 lg:mt-0"
                 >
                     <div className="relative w-full h-full rounded-[40px] overflow-hidden shadow-2xl">
                         <Image

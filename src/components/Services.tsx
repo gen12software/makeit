@@ -41,7 +41,7 @@ export default function Services() {
 
             <div className="max-w-7xl mx-auto relative z-10">
                 {/* Header */}
-                <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-40 gap-8">
+                <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-20 md:mb-40 gap-8">
                     <motion.div
                         initial={{ opacity: 0, x: -30 }}
                         whileInView={{ opacity: 1, x: 0 }}

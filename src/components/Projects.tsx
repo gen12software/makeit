@@ -37,7 +37,7 @@ const projects = [
 
 export default function Projects() {
     return (
-        <section id="proyectos" className="bg-background py-32 relative overflow-hidden">
+        <section id="proyectos" className="bg-background py-16 md:py-32 relative overflow-hidden">
             {/* Background Decorative Text */}
             <div className="absolute top-0 right-0 opacity-[0.03] select-none pointer-events-none translate-x-1/4">
                 <span className="text-[25vw] font-black leading-none">WORKS</span>
@@ -45,7 +45,7 @@ export default function Projects() {
 
             <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 relative z-10">
                 {/* Header */}
-                <div className="mb-32">
+                <div className="mb-16 md:mb-32">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -64,7 +64,7 @@ export default function Projects() {
                 </div>
 
                 {/* Projects List - No more boxes, just pure content */}
-                <div className="space-y-40 lg:space-y-64">
+                <div className="space-y-20 md:space-y-40 lg:space-y-64">
                     {projects.map((project, index) => (
                         <motion.div
                             key={project.title}
@@ -125,7 +125,7 @@ export default function Projects() {
                 <motion.div
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
-                    className="mt-64 pt-32 border-t border-brand-black/5 text-center"
+                    className="mt-24 md:mt-64 pt-16 md:pt-32 border-t border-brand-black/5 text-center"
                 >
                     <p className="text-brand-black/30 font-black uppercase tracking-[0.5em] text-xs mb-8 italic">¿Listos para destacar?</p>
                     <h4 className="text-[8vw] font-black text-brand-black tracking-tighter hover:text-brand-stone transition-colors cursor-pointer">
