@@ -1,26 +1,132 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #F2EFED;
+  /* Cremita / Stone Light */
+  --foreground: #111111;
+
+  --brand-stone: #c5c2ba;
+  --brand-light-gray: #F7F7F7;
+  --brand-white: #FFFFFF;
+  --brand-black: #111111;
+
+  --card: #FFFFFF;
+  --card-foreground: #111111;
+
+  --muted: #EDEDED;
+  --muted-foreground: #666666;
+
+  --border: #E5E5E5;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  --color-brand-stone: var(--brand-stone);
+  --color-brand-light-gray: var(--brand-light-gray);
+  --color-brand-white: var(--brand-white);
+  --color-brand-black: var(--brand-black);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-border: var(--border);
+
+  --font-sans: var(--font-plus-jakarta);
+  --font-heading: var(--font-unbounded);
+  --font-accent: var(--font-outfit);
+  --font-signature: var(--font-caveat);
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(-50%);
+    }
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-plus-jakarta), sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-unbounded), sans-serif;
+    font-weight: 900;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/70 backdrop-blur-md border border-white/20;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .section-padding {
+    @apply py-24 px-6 md:px-12 lg:px-24;
+  }
+
+  .premium-shadow {
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+  }
+
+  .hover-lift {
+    @apply transition-transform duration-300 hover:-translate-y-1;
+  }
+
+  .marquee-content {
+    display: flex;
+    width: fit-content;
+    animation: marquee 30s linear infinite;
+  }
+
+  .minimal-input {
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #E5E5E5;
+    border-radius: 0;
+    padding: 1rem 0;
+    transition: border-color 0.3s ease;
+  }
+
+  .minimal-input:focus {
+    border-bottom-color: var(--brand-black);
+    outline: none;
+  }
+}
+
+/* Hide Next.js / Vercel badges and development overlays */
+[data-nextjs-toast],
+[data-vercel-toolbar],
+#nextjs-portal,
+.__next-prerender-indicator,
+.nextjs-static-indicator {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* Targeting the specific Next.js dev button if necessary */
+nextjs-portal {
+  display: none !important;
 }
