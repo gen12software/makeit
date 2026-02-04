@@ -52,9 +52,9 @@ export default function About() {
                                 <span className="font-heading font-black text-brand-stone tracking-widest text-sm uppercase">About the minds</span>
                             </div>
 
-                            <h2 className="text-[12vw] lg:text-[7vw] font-black text-brand-black leading-[0.85] mb-12 tracking-tighter">
+                            <h2 className="text-[10vw] lg:text-[5.5vw] font-black text-brand-black leading-[0.95] mb-10 tracking-tighter">
                                 THE <br />
-                                <span className="text-brand-stone">FOUNDERS</span>
+                                <span className="text-brand-stone italic">FOUNDERS</span>
                             </h2>
 
                             <div className="space-y-8 max-w-2xl">

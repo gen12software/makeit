@@ -8,36 +8,85 @@ const projects = [
     {
         number: "01",
         title: "LIDHERMA",
-        category: "SHOOTING & CONTENT",
-        description: "Dirección de arte y producción de contenido visual para lanzamientos de temporada de una de las marcas líderes en cosmética.",
-        image: "/images/ProduccionesFotograficas/22.png",
+        category: "SKINCARE & CONTENT",
+        description: "Dirección de arte y producción de contenido visual para lanzamientos de cosmética profesional.",
+        image: "/images/TheWorks/32.png",
     },
     {
         number: "02",
-        title: "MAJE",
-        category: "FASHION SHOOTING",
-        description: "Capturamos la elegancia atemporal en producciones de moda de alta gama, enfocándonos en la sofisticación y el detalle.",
-        image: "/images/ProduccionesFotograficas/23.png",
+        title: "TROMEN",
+        category: "LIFESTYLE & CONTENT",
+        description: "Capturamos la calidez y el diseño de piezas líderes en calefacción y deco.",
+        image: "/images/TheWorks/27.png",
     },
     {
         number: "03",
-        title: "IL GIOIELLO",
+        title: "IL GIOIELLO JOYAS",
         category: "JEWELRY & CONTENT",
-        description: "Fotografía de producto y contenido humanizado para una marca de joyería con enfoque en la elegancia.",
-        image: "/images/ContenidoDigitalyContenidodeProductos/30.png",
+        description: "Producción de contenido humanizado y fotografía de producto para alta joyería.",
+        image: "/images/TheWorks/30.png",
     },
     {
         number: "04",
-        title: "TROMEN",
-        category: "LIFESTYLE & CONTENT",
-        description: "Capturamos momentos de calidez y diseño en producciones de lifestyle para una marca líder en calefacción.",
-        image: "/images/ContenidoDigitalyContenidodeProductos/27.png",
+        title: "HOTEL GRAND BRIZO",
+        category: "HOSPITALITY & CONTENT",
+        description: "Estrategia visual y contenido de lifestyle para una de las cadenas hoteleras más exclusivas.",
+        image: "/images/TheWorks/13.png",
+    },
+    {
+        number: "05",
+        title: "MINI JULI BABY",
+        category: "KIDS FASHION",
+        description: "Dulzura y estética cuidada en producciones de moda infantil.",
+        image: "/images/TheWorks/19.png",
+    },
+    {
+        number: "06",
+        title: "KUTIKA",
+        category: "KIDS DECO & TOYS",
+        description: "Estrategia de marca y contenido para universos de juego y decoración infantil.",
+        image: "/images/TheWorks/20.png",
+    },
+    {
+        number: "07",
+        title: "TIERRA BRUTA",
+        category: "HOME DECO & DESIGN",
+        description: "Minimalismo y calidez en producciones de vajilla y accesorios de diseño.",
+        image: "/images/TheWorks/25.png",
+    },
+    {
+        number: "08",
+        title: "FABRIC",
+        category: "INTERIOR DESIGN",
+        description: "Capturamos el confort y la calidad en producciones de sofás y mobiliario de alta gama.",
+        image: "/images/TheWorks/26.png",
+    },
+    {
+        number: "09",
+        title: "KONSENTIDOS",
+        category: "FURNITURE & DESIGN",
+        description: "Fotografía y estrategia visual para mobiliario con terminaciones artesanales.",
+        image: "/images/TheWorks/28.png",
+    },
+    {
+        number: "10",
+        title: "GINGER & COCO",
+        category: "HOTEL BOUTIQUE",
+        description: "Contenido aspiracional y branding para experiencias de hospedaje exclusivas.",
+        image: "/images/TheWorks/10.png",
+    },
+    {
+        number: "11",
+        title: "HOTEL DAZZLER",
+        category: "SOCIAL MEDIA STRATEGY",
+        description: "Gestión y producción de contenido dinámico para el sector hotelero.",
+        image: "/images/TheWorks/14.png",
     }
 ];
 
 export default function Projects() {
     return (
-        <section id="proyectos" className="bg-background py-16 md:py-32 relative overflow-hidden">
+        <section id="proyectos" className="bg-background py-12 md:py-20 relative overflow-hidden">
             {/* Background Decorative Text */}
             <div className="absolute top-0 right-0 opacity-[0.03] select-none pointer-events-none translate-x-1/4">
                 <span className="text-[25vw] font-black leading-none">WORKS</span>
@@ -56,15 +105,15 @@ export default function Projects() {
                             <div className="h-px w-12 bg-brand-stone" />
                             <span className="font-heading font-black text-brand-stone tracking-[0.2em] text-sm uppercase">Selected Portfolio</span>
                         </div>
-                        <h2 className="text-[12vw] lg:text-[8vw] font-black text-brand-black leading-[0.8] tracking-tighter">
+                        <h2 className="text-[10vw] lg:text-[5.5vw] font-black text-brand-black leading-[0.95] tracking-tighter">
                             THE <br />
                             <span className="text-brand-stone italic uppercase">Works</span>
                         </h2>
                     </motion.div>
                 </div>
 
-                {/* Projects List - No more boxes, just pure content */}
-                <div className="space-y-20 md:space-y-40 lg:space-y-64">
+                {/* Projects List - Alternating Editorial Layout */}
+                <div className="space-y-24 md:space-y-36 lg:space-y-48">
                     {projects.map((project, index) => (
                         <motion.div
                             key={project.title}
@@ -72,49 +121,56 @@ export default function Projects() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.8 }}
-                            className="flex flex-col lg:flex-row gap-12 lg:gap-24 items-center"
+                            className={`flex flex-col lg:flex-row gap-12 lg:gap-32 items-center lg:items-center ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''
+                                }`}
                         >
                             {/* Project Info */}
-                            <div className="w-full lg:w-1/3 order-2 lg:order-1">
-                                <span className="font-heading font-black text-brand-stone text-6xl opacity-20 block mb-6">
-                                    {project.number}
-                                </span>
-                                <p className="text-xs font-black uppercase tracking-[0.3em] text-brand-stone mb-4">
-                                    {project.category}
-                                </p>
-                                <h3 className="text-4xl lg:text-6xl font-black text-brand-black mb-6 tracking-tighter italic">
-                                    {project.title}
-                                </h3>
-                                <p className="text-lg text-brand-black/50 leading-relaxed font-sans mb-8 max-w-sm">
+                            <div className="w-full lg:w-[40%] space-y-8">
+                                <div className="relative">
+                                    <span className="font-heading font-black text-brand-stone text-7xl md:text-9xl opacity-[0.05] absolute -top-12 -left-4 leading-none select-none">
+                                        {project.number}
+                                    </span>
+                                    <div className="relative z-10">
+                                        <p className="text-xs font-black uppercase tracking-[0.4em] text-brand-stone mb-4">
+                                            {project.category}
+                                        </p>
+                                        <h3 className="text-4xl md:text-5xl lg:text-6xl font-black text-brand-black tracking-tighter italic leading-tight uppercase">
+                                            {project.title}
+                                        </h3>
+                                    </div>
+                                </div>
+
+                                <p className="text-lg md:text-xl text-brand-black/60 leading-relaxed font-sans max-w-md">
                                     {project.description}
                                 </p>
+
                                 <motion.button
-                                    whileHover={{ x: 10 }}
-                                    className="flex items-center gap-4 group"
+                                    whileHover={{ x: index % 2 === 0 ? 15 : -15 }}
+                                    className={`flex items-center gap-4 group ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''
+                                        }`}
                                 >
-                                    <div className="h-12 w-12 rounded-full border border-brand-black/10 flex items-center justify-center group-hover:bg-brand-black group-hover:border-brand-black transition-all">
-                                        <ArrowUpRight className="text-brand-black group-hover:text-white transition-colors" size={20} />
+                                    <div className="h-14 w-14 rounded-full border border-brand-black/10 flex items-center justify-center group-hover:bg-brand-black group-hover:border-brand-black transition-all duration-500">
+                                        <ArrowUpRight className="text-brand-black group-hover:text-white transition-colors duration-500" size={24} />
                                     </div>
-                                    <span className="font-black text-xs uppercase tracking-widest text-brand-black/60 group-hover:text-brand-black transition-colors">Ver Proyecto</span>
+                                    <span className="font-black text-xs uppercase tracking-widest text-brand-black/50 group-hover:text-brand-black transition-colors duration-500">Ver Proyecto</span>
                                 </motion.button>
                             </div>
 
-                            {/* Project Image - Large, Clean, No Card Background */}
-                            <div className="w-full lg:w-2/3 order-1 lg:order-2">
+                            {/* Project Image */}
+                            <div className="w-full lg:w-[60%] group/img">
                                 <motion.div
-                                    whileHover={{ scale: 1.02 }}
-                                    transition={{ duration: 0.8 }}
-                                    className="relative aspect-video rounded-[3rem] overflow-hidden shadow-[0_40px_100px_-20px_rgba(0,0,0,0.15)]"
+                                    whileHover={{ scale: 0.98 }}
+                                    transition={{ duration: 0.8, ease: [0.33, 1, 0.68, 1] }}
+                                    className="relative aspect-4/3 lg:aspect-video rounded-[2.5rem] lg:rounded-[4rem] overflow-hidden shadow-[0_60px_120px_-30px_rgba(0,0,0,0.18)]"
                                 >
                                     <Image
                                         src={project.image}
                                         alt={project.title}
                                         fill
-                                        className="object-cover" // Using cover for maximum impact
+                                        className="object-cover transition-transform duration-1000 group-hover/img:scale-110"
                                         priority={index === 0}
                                     />
-                                    {/* Subtle overlay to help white text in images pop if it reaches edges */}
-                                    <div className="absolute inset-0 bg-brand-black/5 pointer-events-none" />
+                                    <div className="absolute inset-0 bg-brand-black/10 opacity-0 group-hover/img:opacity-100 transition-opacity duration-700 pointer-events-none" />
                                 </motion.div>
                             </div>
                         </motion.div>
@@ -125,7 +181,7 @@ export default function Projects() {
                 <motion.div
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
-                    className="mt-24 md:mt-64 pt-16 md:pt-32 border-t border-brand-black/5 text-center"
+                    className="mt-16 md:mt-32 pt-12 md:pt-20 border-t border-brand-black/5 text-center"
                 >
                     <p className="text-brand-black/30 font-black uppercase tracking-[0.5em] text-xs mb-8 italic">¿Listos para destacar?</p>
                     <h4 className="text-[8vw] font-black text-brand-black tracking-tighter hover:text-brand-stone transition-colors cursor-pointer">
