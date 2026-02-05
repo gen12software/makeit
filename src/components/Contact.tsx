@@ -110,7 +110,7 @@ export default function Contact() {
                                 whileTap={{ scale: 0.98 }}
                                 className="w-full h-24 bg-brand-black text-white rounded-full flex items-center justify-center gap-6 group transition-all duration-300 hover:bg-brand-stone shadow-[0_20px_40px_-10px_rgba(0,0,0,0.2)]"
                             >
-                                <span className="font-heading font-black tracking-[0.3em] text-sm uppercase">Agendar Llamada</span>
+                                <span className="font-heading font-black tracking-[0.3em] text-sm uppercase">Quiero hacer crecer mi marca</span>
                                 <div className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center group-hover:rotate-45 transition-transform duration-500">
                                     <ArrowUpRight size={20} />
                                 </div>

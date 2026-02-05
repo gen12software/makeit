@@ -25,7 +25,8 @@ const services = [
             "Reels, stories y carruseles",
             "Dirección creativa y edición"
         ],
-        badge: "Most Popular"
+        badge: "Most Popular",
+        cta: "Quiero contenido de impacto"
     },
     {
         id: "02",
@@ -37,7 +38,8 @@ const services = [
             "Publicación y copy",
             "Community engagement",
             "Análisis de métricas"
-        ]
+        ],
+        cta: "Quiero una marca activa"
     },
     {
         id: "03",
@@ -49,7 +51,8 @@ const services = [
             "Piezas creativas para pauta",
             "Segmentación avanzada",
             "Optimización de ROI"
-        ]
+        ],
+        cta: "Quiero vender más"
     },
     {
         id: "04",
@@ -61,7 +64,8 @@ const services = [
             "Paleta de colores",
             "Tipografías exclusivas",
             "Lineamientos de marca"
-        ]
+        ],
+        cta: "Quiero una identidad única"
     },
     {
         id: "05",
@@ -73,7 +77,8 @@ const services = [
             "E-commerce y tiendas",
             "Integración de pagos",
             "Optimización UI/UX"
-        ]
+        ],
+        cta: "Quiero mi web profesional"
     },
     {
         id: "06",
@@ -85,7 +90,8 @@ const services = [
             "Auditoría de marca",
             "Storytelling",
             "Hoja de ruta"
-        ]
+        ],
+        cta: "Quiero un plan estratégico"
     }
 ];
 
@@ -168,7 +174,7 @@ export default function Services() {
                                     }}
                                     className="mt-12 pt-8 border-t border-brand-black/3 flex items-center justify-between group/btn cursor-pointer relative z-40"
                                 >
-                                    <span className="text-[10px] font-black uppercase tracking-widest text-brand-black/30 group-hover:text-brand-black transition-colors">Saber más</span>
+                                    <span className="text-[10px] font-black uppercase tracking-widest text-brand-black/30 group-hover:text-brand-black transition-colors">{service.cta}</span>
                                     <div className="w-10 h-10 rounded-full border border-brand-black/10 flex items-center justify-center group-hover:bg-brand-black group-hover:border-brand-black transition-all">
                                         <ArrowUpRight size={18} className="text-brand-black group-hover:text-white transition-colors" />
                                     </div>
