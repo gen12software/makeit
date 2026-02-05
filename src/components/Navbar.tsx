@@ -10,8 +10,7 @@ const navLinks = [
     { name: "HOME", href: "#home" },
     { name: "ABOUT", href: "#about" },
     { name: "SERVICIOS", href: "#servicios" },
-    { name: "PROYECTOS", href: "#proyectos" },
-    { name: "CONTACTO", href: "#contacto" },
+    { name: "PROJECTS", href: "#proyectos" },
 ];
 
 export default function Navbar() {
@@ -41,7 +40,7 @@ export default function Navbar() {
                         src="/logo.png"
                         alt="MAKE IT Logo"
                         fill
-                        className="object-contain p-1.5 rounded-xl"
+                        className="object-contain p-1.5 rounded-xl invert grayscale mix-blend-multiply"
                         priority
                     />
                 </Link>
@@ -60,7 +59,7 @@ export default function Navbar() {
                     ))}
                     <Link
                         href="#contacto"
-                        className="px-8 py-3 bg-brand-black text-white rounded-full text-xs font-black tracking-[0.2em] hover:bg-brand-stone transition-all transform hover:scale-105"
+                        className="px-8 py-3 bg-brand-black text-white rounded-full text-xs font-bold tracking-[0.2em] hover:bg-brand-stone transition-all transform hover:scale-105"
                     >
                         CONTACT US
                     </Link>
@@ -86,7 +85,7 @@ export default function Navbar() {
                                 <Link
                                     key={link.name}
                                     href={link.href}
-                                    className="text-4xl font-black text-brand-black tracking-tighter"
+                                    className="text-4xl font-bold text-brand-black tracking-tighter"
                                     onClick={() => setIsOpen(false)}
                                 >
                                     {link.name}

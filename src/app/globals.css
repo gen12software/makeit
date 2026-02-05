@@ -36,10 +36,10 @@
 
   --color-border: var(--border);
 
-  --font-sans: var(--font-outfit);
-  --font-heading: var(--font-noto-serif);
-  --font-accent: var(--font-outfit);
-  --font-signature: var(--font-caveat);
+  --font-sans: var(--font-codec-pro);
+  --font-heading: var(--font-noto-serif-titulares);
+  --font-highlight: var(--font-noto-serif-resaltar);
+  --font-signature: var(--font-damion);
 
   @keyframes marquee {
     0% {
@@ -56,7 +56,7 @@
   body {
     background: var(--background);
     color: var(--foreground);
-    font-family: var(--font-outfit), sans-serif;
+    font-family: var(--font-codec-pro), sans-serif;
   }
 
   h1,
@@ -65,11 +65,19 @@
   h4,
   h5,
   h6 {
-    font-family: var(--font-noto-serif), serif;
-    font-weight: 700;
-    font-variation-settings: "wdth" 62.5;
-    letter-spacing: -0.02em;
+    font-family: var(--font-noto-serif-titulares), serif;
+    font-weight: 400;
+    /* Regular como pidió el diseñador */
+    letter-spacing: -0.01em;
     text-transform: uppercase;
+  }
+
+  /* El diseñador pidió resaltar palabras con Noto Serif Light Italic */
+  em,
+  i,
+  .resaltar {
+    font-family: var(--font-noto-serif-resaltar), serif;
+    font-style: italic;
   }
 }
 

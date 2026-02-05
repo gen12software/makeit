@@ -1,22 +1,26 @@
 import type { Metadata } from "next";
-import { Noto_Serif_Display, Outfit, Caveat } from "next/font/google";
+import localFont from "next/font/local";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import "./globals.css";
 
-const notoSerifDisplay = Noto_Serif_Display({
-  variable: "--font-noto-serif",
-  subsets: ["latin"],
-  axes: ["wdth"],
+const codecPro = localFont({
+  src: "../fonts/Codec Pro Regular.otf",
+  variable: "--font-codec-pro",
 });
 
-const outfit = Outfit({
-  variable: "--font-outfit",
-  subsets: ["latin"],
+const notoSerifTitulares = localFont({
+  src: "../fonts/NotoSerifDisplay_ExtraCondensed-Regular.ttf",
+  variable: "--font-noto-serif-titulares",
 });
 
-const caveat = Caveat({
-  variable: "--font-caveat",
-  subsets: ["latin"],
+const notoSerifResaltar = localFont({
+  src: "../fonts/NotoSerifDisplay-ExtraLightItalic.ttf",
+  variable: "--font-noto-serif-resaltar",
+});
+
+const damion = localFont({
+  src: "../fonts/Damion-Regular.ttf",
+  variable: "--font-damion",
 });
 
 export const metadata: Metadata = {
@@ -59,7 +63,7 @@ export default function RootLayout({
   return (
     <html lang="es" className="scroll-smooth">
       <body
-        className={`${notoSerifDisplay.variable} ${outfit.variable} ${caveat.variable} antialiased selection:bg-brand-stone/30 selection:text-brand-black`}
+        className={`${codecPro.variable} ${notoSerifTitulares.variable} ${notoSerifResaltar.variable} ${damion.variable} antialiased selection:bg-brand-stone/30 selection:text-brand-black`}
       >
         {children}
         <WhatsAppButton />

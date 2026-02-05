@@ -10,7 +10,7 @@ export default function Footer() {
                         src="/logo.png"
                         alt="MAKE IT Logo"
                         fill
-                        className="object-contain"
+                        className="object-contain invert grayscale mix-blend-multiply"
                     />
                 </Link>
 
@@ -18,11 +18,11 @@ export default function Footer() {
                     <Link href="#home" className="hover:text-brand-stone transition-colors">Home</Link>
                     <Link href="#about" className="hover:text-brand-stone transition-colors">About</Link>
                     <Link href="#servicios" className="hover:text-brand-stone transition-colors">Servicios</Link>
-                    <Link href="#proyectos" className="hover:text-brand-stone transition-colors">Proyectos</Link>
+                    <Link href="#proyectos" className="hover:text-brand-stone transition-colors">Projects</Link>
                 </div>
 
                 <div className="text-sm font-medium text-brand-black/40">
-                    © {new Date().getFullYear()} MAKE IT STUDIO.
+                    © {new Date().getFullYear()} <span className="font-bold">Make It Studio</span>.
                 </div>
             </div>
         </footer>

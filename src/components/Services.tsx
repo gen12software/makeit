@@ -108,7 +108,7 @@ export default function Services() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
                     >
-                        <h2 className="text-[10vw] lg:text-[5.5vw] font-black text-brand-black leading-[0.95] tracking-tighter uppercase mb-8">
+                        <h2 className="text-[10vw] lg:text-[5.5vw] text-brand-black leading-[0.95] tracking-tighter uppercase mb-8">
                             OUR <span className="text-brand-stone italic">SERVICES</span>
                         </h2>
                         <div className="h-1 w-24 bg-brand-stone mx-auto rounded-full" />
@@ -133,7 +133,7 @@ export default function Services() {
                                     <div className="w-16 h-16 rounded-2xl bg-brand-light-gray flex items-center justify-center text-brand-black group-hover:bg-brand-black group-hover:text-white transition-all duration-500 transform group-hover:rotate-6">
                                         {service.icon}
                                     </div>
-                                    <span className="font-heading font-black text-4xl text-brand-black/5 group-hover:text-brand-stone/20 transition-colors duration-500">
+                                    <span className="font-heading text-4xl text-brand-black/5 group-hover:text-brand-stone/20 transition-colors duration-500">
                                         {service.id}
                                     </span>
                                 </div>
@@ -141,11 +141,11 @@ export default function Services() {
                                 {/* Content */}
                                 <div className="grow">
                                     {service.badge && (
-                                        <span className="inline-block px-3 py-1 bg-brand-stone/10 text-brand-stone text-[10px] font-black uppercase tracking-widest rounded-full mb-4">
+                                        <span className="inline-block px-3 py-1 bg-brand-stone/10 text-brand-stone text-[10px] font-bold uppercase tracking-widest rounded-full mb-4">
                                             {service.badge}
                                         </span>
                                     )}
-                                    <h3 className="text-2xl md:text-3xl font-black text-brand-black mb-6 tracking-tight leading-tight group-hover:text-brand-stone transition-colors">
+                                    <h3 className="text-2xl md:text-3xl text-brand-black mb-6 tracking-tight leading-tight group-hover:text-brand-stone transition-colors">
                                         {service.title}
                                     </h3>
                                     <p className="text-brand-black/50 text-base leading-relaxed mb-10 font-sans">
@@ -165,18 +165,18 @@ export default function Services() {
                                     </ul>
                                 </div>
 
-                                {/* Bottom: Action Circle */}
+                                {/* Bottom: Action Button */}
                                 <Link
                                     href="#contacto"
                                     onClick={(e) => {
                                         e.preventDefault();
                                         document.getElementById('contacto')?.scrollIntoView({ behavior: 'smooth' });
                                     }}
-                                    className="mt-12 pt-8 border-t border-brand-black/3 flex items-center justify-between group/btn cursor-pointer relative z-40"
+                                    className="mt-12 w-full h-16 bg-brand-black text-white rounded-full flex items-center justify-center gap-4 group/btn transition-all duration-300 hover:bg-brand-stone shadow-lg relative z-40"
                                 >
-                                    <span className="text-[10px] font-black uppercase tracking-widest text-brand-black/30 group-hover:text-brand-black transition-colors">{service.cta}</span>
-                                    <div className="w-10 h-10 rounded-full border border-brand-black/10 flex items-center justify-center group-hover:bg-brand-black group-hover:border-brand-black transition-all">
-                                        <ArrowUpRight size={18} className="text-brand-black group-hover:text-white transition-colors" />
+                                    <span className="text-[10px] font-bold uppercase tracking-widest">{service.cta}</span>
+                                    <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center group-hover/btn:rotate-45 transition-transform duration-500">
+                                        <ArrowUpRight size={16} className="text-white" />
                                     </div>
                                 </Link>
 
@@ -195,7 +195,7 @@ export default function Services() {
                     className="mt-16 md:mt-24 p-10 md:p-16 rounded-[4rem] bg-brand-black text-center text-white relative overflow-hidden"
                 >
                     <div className="relative z-10">
-                        <h4 className="text-4xl md:text-6xl lg:text-7xl font-black mb-12 tracking-tighter leading-tight">
+                        <h4 className="text-4xl md:text-6xl lg:text-7xl mb-12 tracking-tighter leading-tight">
                             ¿LISTOS PARA <br className="hidden md:block" /> EMPRENDER EL VIAJE?
                         </h4>
                         <Link
@@ -204,7 +204,7 @@ export default function Services() {
                                 e.preventDefault();
                                 document.getElementById('contacto')?.scrollIntoView({ behavior: 'smooth' });
                             }}
-                            className="inline-block bg-brand-white text-brand-black px-12 py-6 rounded-full font-black text-sm uppercase tracking-widest hover:bg-brand-stone transition-all duration-500 shadow-xl"
+                            className="inline-block bg-brand-white text-brand-black px-12 py-6 rounded-full font-bold text-sm uppercase tracking-widest hover:bg-brand-stone transition-all duration-500 shadow-xl"
                         >
                             HABLEMOS AHORA
                         </Link>

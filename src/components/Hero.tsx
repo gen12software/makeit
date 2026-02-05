@@ -34,12 +34,12 @@ export default function Hero() {
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: 0.5 }}
-                        className="font-heading font-black text-brand-stone text-sm md:text-base uppercase tracking-[0.4em] mb-4"
+                        className="font-sans text-brand-black/40 text-sm md:text-base uppercase tracking-[0.4em] mb-4"
                     >
                         Make it real.
                     </motion.div>
 
-                    <h1 className="text-[12vw] sm:text-[8vw] lg:text-[5.5vw] font-black text-brand-black leading-[0.95] tracking-tighter mb-8 lg:mb-10">
+                    <h1 className="text-[12vw] sm:text-[8vw] lg:text-[5.5vw] text-brand-black leading-[0.95] tracking-tighter mb-8 lg:mb-10">
                         CREATIVE MINDS, <br />
                         IMPACTFUL <br />
                         BRANDS.
@@ -47,7 +47,7 @@ export default function Hero() {
 
                     <div className="flex flex-col md:flex-row gap-8 items-start md:items-center">
                         <p className="text-lg md:text-xl text-brand-black/70 font-sans max-w-lg leading-relaxed">
-                            En MAKE IT potenciamos marcas a través de estrategias creativas y diseño de alto impacto.
+                            En <span className="font-bold">Make It</span> potenciamos marcas a través de estrategias creativas y diseño de alto impacto.
                         </p>
                         <Link
                             href="#contacto"
@@ -55,7 +55,7 @@ export default function Hero() {
                                 e.preventDefault();
                                 document.getElementById('contacto')?.scrollIntoView({ behavior: 'smooth' });
                             }}
-                            className="px-10 py-5 bg-brand-black text-white rounded-full font-black text-sm hover:bg-brand-stone transition-all transform hover:scale-105 active:scale-95 shadow-xl uppercase tracking-widest whitespace-nowrap"
+                            className="px-10 py-5 bg-brand-black text-white rounded-full font-bold text-sm hover:bg-brand-stone transition-all transform hover:scale-105 active:scale-95 shadow-xl uppercase tracking-widest whitespace-nowrap"
                         >
                             Contact Us
                         </Link>

@@ -8,7 +8,7 @@ export default function About() {
         <section id="about" className="section-padding bg-background relative overflow-hidden">
             {/* Background Decorative Text */}
             <div className="absolute top-0 right-0 opacity-[0.03] select-none pointer-events-none translate-x-1/4 -translate-y-1/4">
-                <span className="text-[30vw] font-black leading-none">MAKE IT</span>
+                <span className="text-[30vw] font-bold leading-none">Make It</span>
             </div>
 
             <div className="max-w-7xl mx-auto relative z-10">
@@ -33,7 +33,7 @@ export default function About() {
                             </div>
                             {/* Floating Badge */}
                             <div className="absolute -bottom-6 -right-6 bg-brand-black text-white p-8 rounded-3xl shadow-2xl hidden md:block">
-                                <p className="font-heading font-black text-2xl leading-none">EST. 2024</p>
+                                <p className="font-heading font-bold text-2xl leading-none">EST. 2024</p>
                                 <p className="text-[10px] uppercase tracking-[0.3em] mt-2 opacity-50">Creative Studio</p>
                             </div>
                         </motion.div>
@@ -49,20 +49,20 @@ export default function About() {
                         >
                             <div className="flex items-center gap-4 mb-6">
                                 <div className="h-[2px] w-12 bg-brand-stone" />
-                                <span className="font-heading font-black text-brand-stone tracking-widest text-sm uppercase">About the minds</span>
+                                <span className="font-heading text-brand-stone tracking-widest text-sm uppercase">About the minds</span>
                             </div>
 
-                            <h2 className="text-[10vw] lg:text-[5.5vw] font-black text-brand-black leading-[0.95] mb-10 tracking-tighter">
+                            <h2 className="text-[10vw] lg:text-[5.5vw] text-brand-black leading-[0.95] mb-10 tracking-tighter">
                                 THE <br />
-                                <span className="text-brand-stone italic">FOUNDERS</span>
+                                <span className="text-brand-stone font-highlight">FOUNDERS</span>
                             </h2>
 
                             <div className="space-y-8 max-w-2xl">
-                                <p className="text-2xl md:text-3xl lg:text-4xl font-heading font-black text-brand-black leading-[1.1] tracking-tight">
-                                    Unimos fuerzas para transformar visiones en <span className="text-brand-stone underline decoration-4 underline-offset-8">realidades digitales</span>.
+                                <p className="text-2xl md:text-3xl lg:text-4xl font-heading text-brand-black leading-[1.2] tracking-tight">
+                                    Unimos fuerzas para <span className="text-brand-stone font-signature text-4xl md:text-5xl lg:text-6xl lowercase">transformar</span> visiones en realidades digitales.
                                 </p>
 
-                                <p className="text-lg md:text-xl text-brand-black/60 leading-relaxed font-sans">
+                                <p className="text-lg md:text-xl text-brand-black/60 leading-snug font-sans">
                                     Creamos estrategias personalizadas que fusionan creatividad, diseño y marketing digital. No somos solo una agencia, somos vuestros aliados estratégicos para construir marcas con propósito.
                                 </p>
                             </div>
@@ -72,10 +72,10 @@ export default function About() {
                                     whileHover={{ y: -5 }}
                                     className="group"
                                 >
-                                    <p className="font-heading font-black text-brand-black text-xl md:text-2xl uppercase tracking-[0.2em] mb-4">Manu Fretes</p>
+                                    <p className="font-heading text-brand-black text-xl md:text-2xl uppercase tracking-[0.05em] mb-4">Manu Fretes</p>
                                     <div className="flex items-center gap-3">
                                         <div className="w-8 h-px bg-brand-stone group-hover:w-12 transition-all duration-300" />
-                                        <p className="text-xs font-black uppercase tracking-widest text-brand-black/40">Co-Founder & Creative</p>
+                                        <p className="text-xs font-bold uppercase tracking-widest text-brand-black/40">Co-Founder & Creative</p>
                                     </div>
                                 </motion.div>
 
@@ -83,10 +83,10 @@ export default function About() {
                                     whileHover={{ y: -5 }}
                                     className="group"
                                 >
-                                    <p className="font-heading font-black text-brand-black text-xl md:text-2xl uppercase tracking-[0.2em] mb-4">Estefi De La Barra</p>
+                                    <p className="font-heading text-brand-black text-xl md:text-2xl uppercase tracking-[0.05em] mb-4">Estefi De La Barra</p>
                                     <div className="flex items-center gap-3">
                                         <div className="w-8 h-px bg-brand-stone group-hover:w-12 transition-all duration-300" />
-                                        <p className="text-xs font-black uppercase tracking-widest text-brand-black/40">Co-Founder & Design</p>
+                                        <p className="text-xs font-bold uppercase tracking-widest text-brand-black/40">Co-Founder & Design</p>
                                     </div>
                                 </motion.div>
                             </div>

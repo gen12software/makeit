@@ -90,7 +90,7 @@ export default function Projects() {
         <section id="proyectos" className="bg-background py-12 md:py-20 relative overflow-hidden">
             {/* Background Decorative Text */}
             <div className="absolute top-0 right-0 opacity-[0.03] select-none pointer-events-none translate-x-1/4">
-                <span className="text-[25vw] font-black leading-none">WORKS</span>
+                <span className="text-[25vw] font-bold leading-none">WORKS</span>
             </div>
 
             <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 relative z-10">
@@ -104,11 +104,11 @@ export default function Projects() {
                     >
                         <div className="flex items-center gap-4 mb-6">
                             <div className="h-px w-12 bg-brand-stone" />
-                            <span className="font-heading font-black text-brand-stone tracking-[0.2em] text-sm uppercase">Selected Portfolio</span>
+                            <span className="font-heading text-brand-stone tracking-[0.2em] text-sm uppercase">Selected Portfolio</span>
                         </div>
-                        <h2 className="text-[10vw] lg:text-[5.5vw] font-black text-brand-black leading-[0.95] tracking-tighter">
+                        <h2 className="text-[10vw] lg:text-[5.5vw] text-brand-black leading-[0.95] tracking-tighter">
                             THE <br />
-                            <span className="text-brand-stone italic uppercase">Works</span>
+                            <span className="text-brand-stone font-highlight uppercase">Works</span>
                         </h2>
                     </motion.div>
                 </div>
@@ -128,14 +128,14 @@ export default function Projects() {
                             {/* Project Info */}
                             <div className="w-full lg:w-[40%] space-y-8">
                                 <div className="relative">
-                                    <span className="font-heading font-black text-brand-stone text-7xl md:text-9xl opacity-[0.05] absolute -top-12 -left-4 leading-none select-none">
+                                    <span className="font-heading text-brand-stone text-7xl md:text-9xl opacity-[0.05] absolute -top-12 -left-4 leading-none select-none">
                                         {project.number}
                                     </span>
                                     <div className="relative z-10">
-                                        <p className="text-xs font-black uppercase tracking-[0.4em] text-brand-stone mb-4">
+                                        <p className="text-xs font-bold uppercase tracking-[0.4em] text-brand-stone mb-4">
                                             {project.category}
                                         </p>
-                                        <h3 className="text-4xl md:text-5xl lg:text-6xl font-black text-brand-black tracking-tighter italic leading-tight uppercase">
+                                        <h3 className="text-4xl md:text-5xl lg:text-6xl text-brand-black tracking-tighter italic leading-tight uppercase">
                                             {project.title}
                                         </h3>
                                     </div>
@@ -160,7 +160,7 @@ export default function Projects() {
                                     >
                                         <ArrowUpRight className="text-brand-black group-hover:text-white transition-colors duration-500" size={24} />
                                     </motion.div>
-                                    <span className="font-black text-xs uppercase tracking-widest text-brand-black/50 group-hover:text-brand-black transition-colors duration-500">LO QUIERO PARA MI MARCA</span>
+                                    <span className="font-bold text-xs uppercase tracking-widest text-brand-black/50 group-hover:text-brand-black transition-colors duration-500">LO QUIERO PARA MI MARCA</span>
                                 </Link>
                             </div>
 
@@ -190,7 +190,7 @@ export default function Projects() {
                     whileInView={{ opacity: 1 }}
                     className="mt-16 md:mt-32 pt-12 md:pt-20 border-t border-brand-black/5 text-center"
                 >
-                    <p className="font-heading font-black text-brand-stone text-sm md:text-base uppercase tracking-[0.4em] mb-8">Let&apos;s make it real</p>
+                    <p className="font-heading text-brand-stone text-sm md:text-base uppercase tracking-[0.4em] mb-8">Let&apos;s make it real</p>
                     <Link
                         href="#contacto"
                         onClick={(e) => {
@@ -198,8 +198,8 @@ export default function Projects() {
                             document.getElementById('contacto')?.scrollIntoView({ behavior: 'smooth' });
                         }}
                     >
-                        <h4 className="text-[8vw] font-black text-brand-black tracking-tighter hover:text-brand-stone transition-colors cursor-pointer">
-                            LET&apos;S <span className="italic">MAKE IT</span> REAL
+                        <h4 className="text-[8vw] text-brand-black tracking-tighter hover:text-brand-stone transition-colors cursor-pointer">
+                            LET&apos;S <span className="font-highlight">Make It</span> Real
                         </h4>
                     </Link>
                 </motion.div>
