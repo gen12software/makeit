@@ -126,7 +126,7 @@ export default function Contact() {
 
                 <div className="mt-40 pt-16 border-t border-brand-black/5 flex flex-col md:flex-row justify-between items-center gap-8 italic text-brand-black/30 font-black text-sm tracking-widest select-none">
                     <p>© 2024 MAKE IT STUDIO. ALL RIGHTS RESERVED.</p>
-                    <p className="font-signature text-3xl opacity-50">Manu & Estefi</p>
+                    <p className="font-heading font-black text-brand-stone text-base md:text-xl uppercase tracking-[0.3em] not-italic">Manu & Estefi</p>
                     <p>CBA / BSAS - GLOBAL</p>
                 </div>
             </div>

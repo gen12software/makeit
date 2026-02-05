@@ -34,7 +34,7 @@ export default function Hero() {
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: 0.5 }}
-                        className="font-signature text-4xl md:text-6xl text-brand-black mb-4 -rotate-6 transform origin-left"
+                        className="font-heading font-black text-brand-stone text-sm md:text-base uppercase tracking-[0.4em] mb-4"
                     >
                         Make it real.
                     </motion.div>

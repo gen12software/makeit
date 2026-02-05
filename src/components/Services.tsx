@@ -102,7 +102,6 @@ export default function Services() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
                     >
-                        <span className="font-signature text-4xl text-brand-stone block mb-4">What we do best</span>
                         <h2 className="text-[10vw] lg:text-[5.5vw] font-black text-brand-black leading-[0.95] tracking-tighter uppercase mb-8">
                             OUR <span className="text-brand-stone italic">SERVICES</span>
                         </h2>
@@ -190,7 +189,6 @@ export default function Services() {
                     className="mt-16 md:mt-24 p-10 md:p-16 rounded-[4rem] bg-brand-black text-center text-white relative overflow-hidden"
                 >
                     <div className="relative z-10">
-                        <span className="font-signature text-4xl text-brand-stone block mb-6">Let&apos;s make it real</span>
                         <h4 className="text-4xl md:text-6xl lg:text-7xl font-black mb-12 tracking-tighter leading-tight">
                             ¿LISTOS PARA <br className="hidden md:block" /> EMPRENDER EL VIAJE?
                         </h4>

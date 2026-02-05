@@ -185,13 +185,12 @@ export default function Projects() {
                     ))}
                 </div>
 
-                {/* Final Call to Action */}
                 <motion.div
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     className="mt-16 md:mt-32 pt-12 md:pt-20 border-t border-brand-black/5 text-center"
                 >
-                    <p className="text-brand-black/30 font-black uppercase tracking-[0.5em] text-xs mb-8 italic">¿Listos para destacar?</p>
+                    <p className="font-heading font-black text-brand-stone text-sm md:text-base uppercase tracking-[0.4em] mb-8">Let&apos;s make it real</p>
                     <Link
                         href="#contacto"
                         onClick={(e) => {

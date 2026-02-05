@@ -67,13 +67,12 @@ export default function About() {
                                 </p>
                             </div>
 
-                            {/* Profiles Grid */}
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16 pt-16 border-t border-brand-black/10">
                                 <motion.div
                                     whileHover={{ y: -5 }}
                                     className="group"
                                 >
-                                    <p className="font-signature text-6xl text-brand-black mb-3">Manu Fretes</p>
+                                    <p className="font-heading font-black text-brand-black text-xl md:text-2xl uppercase tracking-[0.2em] mb-4">Manu Fretes</p>
                                     <div className="flex items-center gap-3">
                                         <div className="w-8 h-px bg-brand-stone group-hover:w-12 transition-all duration-300" />
                                         <p className="text-xs font-black uppercase tracking-widest text-brand-black/40">Co-Founder & Creative</p>
@@ -84,7 +83,7 @@ export default function About() {
                                     whileHover={{ y: -5 }}
                                     className="group"
                                 >
-                                    <p className="font-signature text-6xl text-brand-black mb-3">Estefi De La Barra</p>
+                                    <p className="font-heading font-black text-brand-black text-xl md:text-2xl uppercase tracking-[0.2em] mb-4">Estefi De La Barra</p>
                                     <div className="flex items-center gap-3">
                                         <div className="w-8 h-px bg-brand-stone group-hover:w-12 transition-all duration-300" />
                                         <p className="text-xs font-black uppercase tracking-widest text-brand-black/40">Co-Founder & Design</p>
