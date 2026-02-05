@@ -36,8 +36,8 @@
 
   --color-border: var(--border);
 
-  --font-sans: var(--font-plus-jakarta);
-  --font-heading: var(--font-unbounded);
+  --font-sans: var(--font-outfit);
+  --font-heading: var(--font-noto-serif);
   --font-accent: var(--font-outfit);
   --font-signature: var(--font-caveat);
 
@@ -56,7 +56,7 @@
   body {
     background: var(--background);
     color: var(--foreground);
-    font-family: var(--font-plus-jakarta), sans-serif;
+    font-family: var(--font-outfit), sans-serif;
   }
 
   h1,
@@ -65,9 +65,10 @@
   h4,
   h5,
   h6 {
-    font-family: var(--font-unbounded), sans-serif;
-    font-weight: 900;
-    letter-spacing: -0.05em;
+    font-family: var(--font-noto-serif), serif;
+    font-weight: 700;
+    font-variation-settings: "wdth" 62.5;
+    letter-spacing: -0.02em;
     text-transform: uppercase;
   }
 }

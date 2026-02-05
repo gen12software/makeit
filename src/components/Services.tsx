@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import {
     Camera,
     Smartphone,
@@ -118,7 +119,7 @@ export default function Services() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, delay: index * 0.1 }}
-                            className="group"
+                            className="group h-full"
                         >
                             <div className="bg-white border border-brand-black/3 p-10 md:p-12 rounded-[3rem] h-full flex flex-col transition-all duration-500 hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.08)] hover:-translate-y-2 relative overflow-hidden group">
 
@@ -160,12 +161,19 @@ export default function Services() {
                                 </div>
 
                                 {/* Bottom: Action Circle */}
-                                <div className="mt-12 pt-8 border-t border-brand-black/3 flex items-center justify-between">
+                                <Link
+                                    href="#contacto"
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                        document.getElementById('contacto')?.scrollIntoView({ behavior: 'smooth' });
+                                    }}
+                                    className="mt-12 pt-8 border-t border-brand-black/3 flex items-center justify-between group/btn cursor-pointer relative z-40"
+                                >
                                     <span className="text-[10px] font-black uppercase tracking-widest text-brand-black/30 group-hover:text-brand-black transition-colors">Saber más</span>
                                     <div className="w-10 h-10 rounded-full border border-brand-black/10 flex items-center justify-center group-hover:bg-brand-black group-hover:border-brand-black transition-all">
                                         <ArrowUpRight size={18} className="text-brand-black group-hover:text-white transition-colors" />
                                     </div>
-                                </div>
+                                </Link>
 
                                 {/* Hover Background Decoration */}
                                 <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-brand-stone/5 rounded-full blur-3xl scale-0 group-hover:scale-150 transition-all duration-700 pointer-events-none" />
@@ -186,9 +194,16 @@ export default function Services() {
                         <h4 className="text-4xl md:text-6xl lg:text-7xl font-black mb-12 tracking-tighter leading-tight">
                             ¿LISTOS PARA <br className="hidden md:block" /> EMPRENDER EL VIAJE?
                         </h4>
-                        <button className="bg-brand-white text-brand-black px-12 py-6 rounded-full font-black text-sm uppercase tracking-widest hover:bg-brand-stone transition-all duration-500 shadow-xl">
+                        <Link
+                            href="#contacto"
+                            onClick={(e) => {
+                                e.preventDefault();
+                                document.getElementById('contacto')?.scrollIntoView({ behavior: 'smooth' });
+                            }}
+                            className="inline-block bg-brand-white text-brand-black px-12 py-6 rounded-full font-black text-sm uppercase tracking-widest hover:bg-brand-stone transition-all duration-500 shadow-xl"
+                        >
                             HABLEMOS AHORA
-                        </button>
+                        </Link>
                     </div>
                     {/* Background Noise/Texture or decoration could go here */}
                     <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/asfalt-dark.png')] pointer-events-none" />

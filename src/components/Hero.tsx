@@ -1,13 +1,14 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 
 const heroImages = [
+    { id: 3, src: "/images/3.png" },
     { id: 1, src: "/images/1.png" },
     { id: 2, src: "/images/2.png" },
-    { id: 3, src: "/images/3.png" },
 ];
 
 export default function Hero() {
@@ -48,9 +49,16 @@ export default function Hero() {
                         <p className="text-lg md:text-xl text-brand-black/70 font-sans max-w-lg leading-relaxed">
                             En MAKE IT potenciamos marcas a través de estrategias creativas y diseño de alto impacto.
                         </p>
-                        <button className="px-10 py-5 bg-brand-black text-white rounded-full font-black text-sm hover:bg-brand-stone transition-all transform hover:scale-105 active:scale-95 shadow-xl uppercase tracking-widest whitespace-nowrap">
+                        <Link
+                            href="#contacto"
+                            onClick={(e) => {
+                                e.preventDefault();
+                                document.getElementById('contacto')?.scrollIntoView({ behavior: 'smooth' });
+                            }}
+                            className="px-10 py-5 bg-brand-black text-white rounded-full font-black text-sm hover:bg-brand-stone transition-all transform hover:scale-105 active:scale-95 shadow-xl uppercase tracking-widest whitespace-nowrap"
+                        >
                             Contact Us
-                        </button>
+                        </Link>
                     </div>
                 </motion.div>
 

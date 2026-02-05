@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowUpRight, Send, Mail, Instagram, Linkedin, Globe } from "lucide-react";
+import { ArrowUpRight, Send, Mail, Instagram, Linkedin, Globe, MessageCircle } from "lucide-react";
 
 export default function Contact() {
     return (
@@ -37,111 +37,95 @@ export default function Contact() {
                                     Estamos listos para transformar tu visión en una realidad digital de alto impacto. Escribinos y empecemos a crear.
                                 </p>
 
-                                <div className="space-y-6 pt-10">
-                                    <a href="mailto:hola@makeit-studio.com" className="flex items-center gap-6 group">
-                                        <div className="h-14 w-14 rounded-full border border-brand-black/10 flex items-center justify-center group-hover:bg-brand-black transition-all duration-300">
-                                            <Mail className="text-brand-black group-hover:text-white transition-colors" size={20} />
-                                        </div>
-                                        <div>
-                                            <p className="text-[10px] uppercase tracking-[0.3em] text-brand-stone font-black mb-1">Email</p>
-                                            <p className="text-xl font-black text-brand-black">hola@makeit-studio.com</p>
-                                        </div>
-                                    </a>
-
-                                    <div className="flex items-center gap-4 pt-4">
-                                        {[
-                                            { icon: <Instagram size={20} />, label: "Instagram", href: "#" },
-                                            { icon: <Linkedin size={20} />, label: "LinkedIn", href: "#" },
-                                            { icon: <Globe size={20} />, label: "Behance", href: "#" }
-                                        ].map((social) => (
-                                            <a
-                                                key={social.label}
-                                                href={social.href}
-                                                className="h-12 w-12 rounded-full border border-brand-black/5 flex items-center justify-center hover:bg-brand-stone/10 transition-colors"
-                                                aria-label={social.label}
-                                            >
-                                                {social.icon}
-                                            </a>
-                                        ))}
-                                    </div>
+                                <div className="space-y-8 pt-10">
+                                    {[
+                                        {
+                                            icon: <Mail size={20} />,
+                                            label: "Email",
+                                            value: "hola@makeit-studio.com",
+                                            href: "mailto:hola@makeit-studio.com"
+                                        },
+                                        {
+                                            icon: <MessageCircle size={20} />,
+                                            label: "WhatsApp",
+                                            value: "+54 9 2215 02-7463",
+                                            href: "https://wa.me/5492215027463"
+                                        },
+                                        {
+                                            icon: <Instagram size={20} />,
+                                            label: "Instagram",
+                                            value: "@makeit.studio",
+                                            href: "https://instagram.com/makeit.studio"
+                                        },
+                                        {
+                                            icon: <Linkedin size={20} />,
+                                            label: "LinkedIn",
+                                            value: "Make It Studio",
+                                            href: "https://linkedin.com/company/makeitstudio"
+                                        }
+                                    ].map((contact) => (
+                                        <a
+                                            key={contact.label}
+                                            href={contact.href}
+                                            target={contact.href.startsWith('http') ? "_blank" : undefined}
+                                            rel={contact.href.startsWith('http') ? "noopener noreferrer" : undefined}
+                                            className="flex items-center gap-6 group"
+                                        >
+                                            <div className="h-14 w-14 rounded-full border border-brand-black/10 flex items-center justify-center group-hover:bg-brand-black transition-all duration-300">
+                                                <div className="text-brand-black group-hover:text-white transition-colors">
+                                                    {contact.icon}
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <p className="text-[10px] uppercase tracking-[0.3em] text-brand-stone font-black mb-1">{contact.label}</p>
+                                                <p className="text-xl font-black text-brand-black">{contact.value}</p>
+                                            </div>
+                                        </a>
+                                    ))}
                                 </div>
                             </div>
                         </motion.div>
                     </div>
 
-                    {/* Right Column: Modern Form */}
+                    {/* Right Column: Calendly Booking Card */}
                     <div className="lg:col-span-7">
                         <motion.div
                             initial={{ opacity: 0, y: 40 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.8, delay: 0.2 }}
-                            className="bg-white p-8 md:p-16 rounded-[40px] shadow-[0_40px_100px_-20px_rgba(0,0,0,0.05)] border border-brand-stone/10"
+                            className="bg-white p-10 md:p-20 rounded-[50px] shadow-[0_40px_100px_-20px_rgba(0,0,0,0.05)] border border-brand-stone/10 text-center flex flex-col items-center"
                         >
-                            <form className="space-y-10 md:space-y-12" onSubmit={(e) => e.preventDefault()}>
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12">
-                                    <div className="relative group">
-                                        <input
-                                            type="text"
-                                            name="name"
-                                            required
-                                            placeholder=" "
-                                            className="peer w-full bg-transparent border-b-2 border-brand-black/10 py-4 text-lg md:text-xl font-black text-brand-black outline-none transition-all focus:border-brand-stone"
-                                        />
-                                        <label className="absolute left-0 top-4 text-brand-black/30 text-base md:text-lg font-black uppercase tracking-widest transition-all peer-focus:-top-4 peer-focus:text-xs peer-focus:text-brand-stone peer-[:not(:placeholder-shown)]:-top-4 peer-[:not(:placeholder-shown)]:text-xs">
-                                            Nombre
-                                        </label>
-                                    </div>
+                            <div className="w-20 h-20 rounded-3xl bg-brand-light-gray flex items-center justify-center mb-10">
+                                <Globe className="text-brand-black w-10 h-10" />
+                            </div>
 
-                                    <div className="relative group">
-                                        <input
-                                            type="email"
-                                            name="email"
-                                            required
-                                            placeholder=" "
-                                            className="peer w-full bg-transparent border-b-2 border-brand-black/10 py-4 text-lg md:text-xl font-black text-brand-black outline-none transition-all focus:border-brand-stone"
-                                        />
-                                        <label className="absolute left-0 top-4 text-brand-black/30 text-base md:text-lg font-black uppercase tracking-widest transition-all peer-focus:-top-4 peer-focus:text-xs peer-focus:text-brand-stone peer-[:not(:placeholder-shown)]:-top-4 peer-[:not(:placeholder-shown)]:text-xs">
-                                            Email
-                                        </label>
-                                    </div>
+                            <h3 className="text-4xl md:text-5xl font-black text-brand-black mb-6 tracking-tighter leading-tight italic uppercase">
+                                Reserva tu <br /> <span className="text-brand-stone not-italic">Reunión</span>
+                            </h3>
+
+                            <p className="text-lg md:text-xl text-brand-black/50 leading-relaxed font-sans mb-12 max-w-sm">
+                                Elegí el día y horario que mejor te quede para conversar sobre tu proyecto y cómo podemos potenciarlo.
+                            </p>
+
+                            <motion.a
+                                href="https://calendly.com/makeitstudio-agency/reunion"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                whileHover={{ scale: 1.02 }}
+                                whileTap={{ scale: 0.98 }}
+                                className="w-full h-24 bg-brand-black text-white rounded-full flex items-center justify-center gap-6 group transition-all duration-300 hover:bg-brand-stone shadow-[0_20px_40px_-10px_rgba(0,0,0,0.2)]"
+                            >
+                                <span className="font-heading font-black tracking-[0.3em] text-sm uppercase">Agendar Llamada</span>
+                                <div className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center group-hover:rotate-45 transition-transform duration-500">
+                                    <ArrowUpRight size={20} />
                                 </div>
+                            </motion.a>
 
-                                <div className="relative group">
-                                    <input
-                                        type="text"
-                                        name="subject"
-                                        placeholder=" "
-                                        className="peer w-full bg-transparent border-b-2 border-brand-black/10 py-4 text-lg md:text-xl font-black text-brand-black outline-none transition-all focus:border-brand-stone"
-                                    />
-                                    <label className="absolute left-0 top-4 text-brand-black/30 text-base md:text-lg font-black uppercase tracking-widest transition-all peer-focus:-top-4 peer-focus:text-xs peer-focus:text-brand-stone peer-[:not(:placeholder-shown)]:-top-4 peer-[:not(:placeholder-shown)]:text-xs">
-                                        Interés (Marca, Foto, Estrategia...)
-                                    </label>
-                                </div>
-
-                                <div className="relative group">
-                                    <textarea
-                                        name="message"
-                                        rows={2}
-                                        placeholder=" "
-                                        className="peer w-full bg-transparent border-b-2 border-brand-black/10 py-4 text-lg md:text-xl font-black text-brand-black outline-none transition-all focus:border-brand-stone resize-none"
-                                    />
-                                    <label className="absolute left-0 top-4 text-brand-black/30 text-base md:text-lg font-black uppercase tracking-widest transition-all peer-focus:-top-4 peer-focus:text-xs peer-focus:text-brand-stone peer-[:not(:placeholder-shown)]:-top-4 peer-[:not(:placeholder-shown)]:text-xs">
-                                        Tu Mensaje
-                                    </label>
-                                </div>
-
-                                <motion.button
-                                    whileHover={{ scale: 1.02 }}
-                                    whileTap={{ scale: 0.98 }}
-                                    className="w-full h-20 bg-brand-black text-white rounded-full flex items-center justify-center gap-4 group transition-all duration-300 hover:bg-brand-stone"
-                                >
-                                    <span className="font-heading font-black tracking-[0.3em] text-sm uppercase">Enviar Mensaje</span>
-                                    <div className="h-8 w-8 rounded-full bg-white/10 flex items-center justify-center group-hover:rotate-45 transition-transform duration-500">
-                                        <Send size={16} />
-                                    </div>
-                                </motion.button>
-                            </form>
+                            <div className="mt-12 flex items-center gap-3 text-xs font-black uppercase tracking-widest text-brand-black/20">
+                                <div className="w-2 h-2 rounded-full bg-brand-stone animate-pulse" />
+                                <span>Disponibilidad Actualizada</span>
+                            </div>
                         </motion.div>
                     </div>
                 </div>

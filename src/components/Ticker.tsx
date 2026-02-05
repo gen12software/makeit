@@ -10,7 +10,7 @@ const items = [
 
 export default function Ticker() {
     return (
-        <div className="py-8 border-y border-brand-black/5 overflow-hidden bg-brand-black relative z-20">
+        <div className="py-2.5 border-y border-brand-black/5 overflow-hidden bg-brand-black relative z-20">
             <div className="marquee-content whitespace-nowrap flex items-center gap-16">
                 {[...Array(4)].map((_, i) => (
                     <div key={i} className="flex items-center gap-16">
@@ -18,8 +18,8 @@ export default function Ticker() {
                             <span
                                 key={`${item.text}-${idx}`}
                                 className={`flex items-center gap-16 ${item.type === "signature"
-                                        ? "font-signature text-4xl md:text-6xl text-brand-stone"
-                                        : "font-heading font-black text-2xl md:text-3xl text-white tracking-widest"
+                                    ? "font-heading font-black text-lg md:text-xl text-brand-stone tracking-[0.2em]"
+                                    : "font-heading font-black text-lg md:text-xl text-white tracking-[0.2em]"
                                     }`}
                             >
                                 {item.text}

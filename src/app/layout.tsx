@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, Outfit, Caveat, Unbounded } from "next/font/google";
+import { Noto_Serif_Display, Outfit, Caveat } from "next/font/google";
+import WhatsAppButton from "@/components/WhatsAppButton";
 import "./globals.css";
 
-const plusJakarta = Plus_Jakarta_Sans({
-  variable: "--font-plus-jakarta",
+const notoSerifDisplay = Noto_Serif_Display({
+  variable: "--font-noto-serif",
   subsets: ["latin"],
+  axes: ["wdth"],
 });
 
 const outfit = Outfit({
@@ -17,16 +19,12 @@ const caveat = Caveat({
   subsets: ["latin"],
 });
 
-const unbounded = Unbounded({
-  variable: "--font-unbounded",
-  subsets: ["latin"],
-});
-
 export const metadata: Metadata = {
+  metadataBase: new URL("https://makeit-studio.com"),
   title: "MAKE IT | Marketing, Design & Strategy",
   description: "Potenciamos tu marca personal y profesional. Marketing, diseño y estrategia para creadores y empresas.",
   icons: {
-    icon: "/favicon.ico",
+    icon: "/favicon.png",
     apple: "/logo.png",
   },
   openGraph: {
@@ -61,9 +59,10 @@ export default function RootLayout({
   return (
     <html lang="es" className="scroll-smooth">
       <body
-        className={`${plusJakarta.variable} ${outfit.variable} ${caveat.variable} ${unbounded.variable} antialiased selection:bg-brand-stone/30 selection:text-brand-black`}
+        className={`${notoSerifDisplay.variable} ${outfit.variable} ${caveat.variable} antialiased selection:bg-brand-stone/30 selection:text-brand-black`}
       >
         {children}
+        <WhatsAppButton />
       </body>
     </html>
   );

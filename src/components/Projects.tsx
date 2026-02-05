@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
 const projects = [
@@ -144,16 +145,23 @@ export default function Projects() {
                                     {project.description}
                                 </p>
 
-                                <motion.button
-                                    whileHover={{ x: index % 2 === 0 ? 15 : -15 }}
+                                <Link
+                                    href="#contacto"
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                        document.getElementById('contacto')?.scrollIntoView({ behavior: 'smooth' });
+                                    }}
                                     className={`flex items-center gap-4 group ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''
                                         }`}
                                 >
-                                    <div className="h-14 w-14 rounded-full border border-brand-black/10 flex items-center justify-center group-hover:bg-brand-black group-hover:border-brand-black transition-all duration-500">
+                                    <motion.div
+                                        whileHover={{ x: index % 2 === 0 ? 15 : -15 }}
+                                        className="h-14 w-14 rounded-full border border-brand-black/10 flex items-center justify-center group-hover:bg-brand-black group-hover:border-brand-black transition-all duration-500"
+                                    >
                                         <ArrowUpRight className="text-brand-black group-hover:text-white transition-colors duration-500" size={24} />
-                                    </div>
-                                    <span className="font-black text-xs uppercase tracking-widest text-brand-black/50 group-hover:text-brand-black transition-colors duration-500">Ver Proyecto</span>
-                                </motion.button>
+                                    </motion.div>
+                                    <span className="font-black text-xs uppercase tracking-widest text-brand-black/50 group-hover:text-brand-black transition-colors duration-500">LO QUIERO PARA MI MARCA</span>
+                                </Link>
                             </div>
 
                             {/* Project Image */}
@@ -184,9 +192,17 @@ export default function Projects() {
                     className="mt-16 md:mt-32 pt-12 md:pt-20 border-t border-brand-black/5 text-center"
                 >
                     <p className="text-brand-black/30 font-black uppercase tracking-[0.5em] text-xs mb-8 italic">¿Listos para destacar?</p>
-                    <h4 className="text-[8vw] font-black text-brand-black tracking-tighter hover:text-brand-stone transition-colors cursor-pointer">
-                        LET&apos;S <span className="italic">MAKE IT</span> REAL
-                    </h4>
+                    <Link
+                        href="#contacto"
+                        onClick={(e) => {
+                            e.preventDefault();
+                            document.getElementById('contacto')?.scrollIntoView({ behavior: 'smooth' });
+                        }}
+                    >
+                        <h4 className="text-[8vw] font-black text-brand-black tracking-tighter hover:text-brand-stone transition-colors cursor-pointer">
+                            LET&apos;S <span className="italic">MAKE IT</span> REAL
+                        </h4>
+                    </Link>
                 </motion.div>
             </div>
         </section>
