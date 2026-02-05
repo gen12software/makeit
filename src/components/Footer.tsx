@@ -22,7 +22,7 @@ export default function Footer() {
                 </div>
 
                 <div className="text-sm font-medium text-brand-black/40">
-                    © {new Date().getFullYear()} MAKE IT STUDIO. All rights reserved.
+                    © {new Date().getFullYear()} MAKE IT STUDIO.
                 </div>
             </div>
         </footer>

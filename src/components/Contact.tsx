@@ -42,26 +42,20 @@ export default function Contact() {
                                         {
                                             icon: <Mail size={20} />,
                                             label: "Email",
-                                            value: "hola@makeit-studio.com",
-                                            href: "mailto:hola@makeit-studio.com"
+                                            value: "makeitstudio.agency@gmail.com",
+                                            href: "mailto:makeitstudio.agency@gmail.com"
                                         },
                                         {
                                             icon: <MessageCircle size={20} />,
                                             label: "WhatsApp",
                                             value: "+54 9 2215 02-7463",
-                                            href: "https://wa.me/5492215027463"
+                                            href: `https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "5492215027463"}`
                                         },
                                         {
                                             icon: <Instagram size={20} />,
                                             label: "Instagram",
-                                            value: "@makeit.studio",
-                                            href: "https://instagram.com/makeit.studio"
-                                        },
-                                        {
-                                            icon: <Linkedin size={20} />,
-                                            label: "LinkedIn",
-                                            value: "Make It Studio",
-                                            href: "https://linkedin.com/company/makeitstudio"
+                                            value: "@makeitagency_",
+                                            href: "https://instagram.com/makeitagency_"
                                         }
                                     ].map((contact) => (
                                         <a
@@ -109,7 +103,7 @@ export default function Contact() {
                             </p>
 
                             <motion.a
-                                href="https://calendly.com/makeitstudio-agency/reunion"
+                                href={process.env.NEXT_PUBLIC_CALENDLY_URL || "https://calendly.com/makeitstudio-agency/reunion"}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 whileHover={{ scale: 1.02 }}
