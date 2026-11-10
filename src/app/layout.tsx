@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import localFont from "next/font/local";
-import WhatsAppButton from "@/components/WhatsAppButton";
 import "./globals.css";
 
 const codecPro = localFont({
@@ -109,7 +108,6 @@ export default function RootLayout({
           />
         </noscript>
         {children}
-        <WhatsAppButton />
       </body>
     </html>
   );

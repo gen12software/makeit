@@ -5,12 +5,14 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import { DELABARRA_URL } from "@/lib/links";
 
 const navLinks = [
-    { name: "HOME", href: "#home" },
-    { name: "ABOUT US", href: "#about" },
-    { name: "SERVICES", href: "#servicios" },
-    { name: "PROJECTS", href: "#proyectos" },
+    { name: "HOME", href: "/#home" },
+    { name: "ABOUT US", href: "/#about" },
+    { name: "SERVICES", href: "/#servicios" },
+    { name: "PROJECTS", href: "/#proyectos" },
+    { name: "DE LA BARRA EXPERIENCE", href: DELABARRA_URL },
 ];
 
 export default function Navbar() {
@@ -34,33 +36,33 @@ export default function Navbar() {
                 <Link
                     href="/"
                     aria-label="MAKE IT Studio — Inicio"
-                    className="relative h-12 w-12 group transition-all duration-300 transform hover:scale-110 active:scale-95"
+                    className="relative h-12 w-12 shrink-0 rounded-full overflow-hidden transition-all duration-300 transform hover:scale-110 active:scale-95"
                 >
-                    <div className="absolute inset-0 bg-brand-black/5 rounded-xl transition-colors group-hover:bg-brand-black/10" />
                     <Image
                         src="/logo.png"
                         alt="MAKE IT Logo"
                         fill
-                        className="object-contain p-1.5 rounded-xl"
+                        sizes="48px"
+                        className="object-cover"
                         priority
                     />
                 </Link>
 
                 {/* Desktop Menu */}
-                <div className="hidden md:flex gap-10 items-center">
+                <div className="hidden md:flex md:gap-5 lg:gap-10 items-center">
                     {navLinks.map((link) => (
                         <Link
                             key={link.name}
                             href={link.href}
-                            className="text-sm font-bold tracking-widest transition-all duration-300 hover:text-brand-stone text-brand-black"
+                            className="text-[11px] lg:text-sm font-bold tracking-widest whitespace-nowrap transition-all duration-300 hover:text-brand-stone text-brand-black"
                         >
                             {link.name}
                         </Link>
                     ))}
                     <Link
-                        href="#contacto"
+                        href="/#contacto"
                         aria-label="Contactanos"
-                        className="px-8 py-3 bg-brand-black text-white rounded-full text-xs font-bold tracking-[0.2em] hover:bg-brand-stone transition-all transform hover:scale-105"
+                        className="hidden lg:inline-block px-8 py-3 bg-brand-black text-white rounded-full text-xs font-bold tracking-[0.2em] whitespace-nowrap hover:bg-brand-stone transition-all transform hover:scale-105"
                     >
                         CONTACT US
                     </Link>
