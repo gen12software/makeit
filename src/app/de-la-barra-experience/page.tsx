@@ -3,7 +3,27 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, ArrowLeft, Mail } from "lucide-react";
 import Navbar from "@/components/Navbar";
+import DeLaBarraHeroPanel from "@/components/DeLaBarraHeroPanel";
 import Footer from "@/components/Footer";
+
+/** Tramo de texto: string normal o { em } resaltado en serif itálica. */
+type Segment = string | { em: string };
+
+function Segments({ parts }: { parts: Segment[] }) {
+    return (
+        <>
+            {parts.map((part, i) =>
+                typeof part === "string" ? (
+                    part
+                ) : (
+                    <em key={i} className="font-highlight italic text-brand-stone">
+                        {part.em}
+                    </em>
+                )
+            )}
+        </>
+    );
+}
 
 /**
  * Contenido editable de la landing. Todo lo marcado PENDIENTE lo tiene que
@@ -11,19 +31,28 @@ import Footer from "@/components/Footer";
  * referencia y oculta los bloques sin material.
  */
 const content = {
-    // PENDIENTE: foto de Estefi sola → "/images/delabarra/estefi.jpg"
-    photo: null as string | null,
+    // PENDIENTE: las 2–3 fotos de Estefi → "/images/delabarra/estefi-1.jpg", etc. Si hay más de una, rotan.
+    photos: [{ src: "/images/estefi_creative_minds.jpeg", alt: "Estefi De La Barra" }],
     logo: "/images/delabarra/logo.png",
     // PENDIENTE: mail de De La Barra Experience (mientras tanto, el de Make It)
     email: "makeitstudio.agency@gmail.com",
-    tagline: "Experiencias que se viven.",
+    tagline: "BRANDS LIVE",
     intro:
         "Eventos corporativos, lanzamientos y activaciones de marca bajo la dirección de Estefi De La Barra.",
-    // PENDIENTE: CV breve de Estefi
-    bio: [
-        "Estefi De La Barra es Founder & Creative Director de Make It y de De La Barra Experience.",
-        "Integra el concepto y la dirección creativa de cada marca a experiencias reales: eventos, activaciones y lanzamientos que potencian el alcance de cada proyecto, fortalecen su posicionamiento y conectan con sus audiencias.",
-    ],
+    bajada:
+        "Diseñamos y producimos eventos corporativos, posicionamiento de marca, lanzamientos, y activaciones con sponsors que acercan tu marca a su audiencia para una mejor experiencia.",
+    // Texto de la presentación. Las partes { em } se resaltan en serif itálica.
+    bio: {
+        lead: [
+            "Soy Diseñadora en Comunicación Visual y de Indumentaria. Con mi formación, logré desarrollar mi pasión por ",
+            { em: "lo visual, la gráfica, y la escenografía" },
+            " en el mundo corporativo, creando universos de marca a los que les doy forma en espacios, eventos y activaciones.",
+        ],
+        body: [
+            "Desde De La Barra, diseño y dirijo experiencias para que las marcas se encuentren con su audiencia. Cada proyecto parte de una decisión estratégica en la que se trabaja de principio a fin: desde cómo se anuncia y qué expectativa genera una marca, hasta lo que la gente comparte después.",
+        ],
+        quote: ["Queremos que las personas ", { em: "descubran, sientan y recuerden" }, " esa marca."],
+    } satisfies Record<string, Segment[]>,
     services: [
         {
             title: "Eventos corporativos",
@@ -70,21 +99,18 @@ export default function DeLaBarraExperiencePage() {
                         >
                             <ArrowLeft size={14} /> Volver a Make It
                         </Link>
-                        <p className="font-sans text-sm uppercase tracking-[0.4em] text-brand-stone mb-4">De La Barra Experience</p>
+                        <p className="font-sans text-sm uppercase tracking-[0.4em] text-brand-stone mb-1">De La Barra Experience</p>
                         <h1 className="text-[12vw] sm:text-[8vw] lg:text-[5.5vw] leading-[0.95] tracking-tighter mb-8">
                             {content.tagline}
                         </h1>
-                        <p className="font-sans text-lg md:text-xl text-brand-black/70 leading-relaxed max-w-xl">{content.intro}</p>
+                        <p className="font-sans text-lg md:text-xl text-brand-black/70 leading-snug max-w-xl">{content.intro}</p>
+                        <p className="mt-4 font-sans text-base md:text-lg text-brand-black/60 leading-relaxed max-w-xl">{content.bajada}</p>
                     </div>
                     <div className="lg:col-span-5">
-                        <div className="relative w-full aspect-3/4 lg:aspect-auto lg:h-[70vh] rounded-[40px] md:rounded-[60px] overflow-hidden bg-black shadow-2xl">
-                            {/* Panel del hero: el logo (fondo negro puro, igual al del PNG). Si llega la foto de Estefi, la reemplaza. */}
-                            {content.photo ? (
-                                <Image src={content.photo} alt="Estefi De La Barra" fill priority sizes="(max-width: 1024px) 90vw, 500px" className="object-cover" />
-                            ) : (
-                                <Image src={content.logo} alt="De La Barra Experience logo" fill priority sizes="(max-width: 1024px) 90vw, 500px" className="object-contain p-6 md:p-10" />
-                            )}
-                        </div>
+                        <DeLaBarraHeroPanel photos={content.photos} logo={content.logo} />
+                        <p className="mt-4 font-highlight italic normal-case text-lg text-brand-black/60">
+                            Bajo la dirección creativa de Estefi De La Barra.
+                        </p>
                     </div>
                 </div>
             </section>
@@ -92,18 +118,26 @@ export default function DeLaBarraExperiencePage() {
             {/* Presentación */}
             <section className="py-20 px-6 md:px-12 lg:px-24 border-t border-brand-black/10">
                 <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12">
-                    <div className="lg:col-span-5">
-                        <p className="font-sans text-[10px] uppercase tracking-[0.3em] text-brand-stone mb-4">Presentación</p>
-                        <h2 className="text-4xl md:text-6xl tracking-tighter leading-[0.95]">
-                            Estefi <br />
-                            <span className="font-highlight italic text-brand-stone normal-case">De La Barra</span>
+                    <div className="lg:col-span-5 lg:sticky lg:top-32 self-start">
+                        <h2 className="text-4xl md:text-6xl tracking-tighter leading-[0.95] normal-case">
+                            Estefi
+                            <span className="block relative -mt-3 md:-mt-6 font-highlight italic text-brand-stone normal-case">De La Barra</span>
                         </h2>
                         <p className="mt-4 text-xs uppercase tracking-widest text-brand-black/40">Founder & Creative Director</p>
                     </div>
-                    <div className="lg:col-span-7 space-y-6 font-sans text-lg md:text-xl text-brand-black/70 leading-relaxed">
-                        {content.bio.map((paragraph) => (
-                            <p key={paragraph}>{paragraph}</p>
-                        ))}
+                    <div className="lg:col-span-7">
+                        {/* CV: entrada grande */}
+                        <p className="font-sans text-xl md:text-2xl text-brand-black leading-snug tracking-tight">
+                            <Segments parts={content.bio.lead} />
+                        </p>
+                        {/* Enfoque de De La Barra: con línea al costado */}
+                        <p className="mt-10 border-l-2 border-brand-stone/40 pl-6 font-sans text-lg md:text-xl text-brand-black/70 leading-relaxed">
+                            <Segments parts={content.bio.body} />
+                        </p>
+                        {/* Cierre destacado */}
+                        <p className="mt-12 font-heading text-3xl md:text-5xl text-brand-black leading-[1.05] tracking-tight">
+                            <Segments parts={content.bio.quote} />
+                        </p>
                     </div>
                 </div>
             </section>

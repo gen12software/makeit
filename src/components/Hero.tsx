@@ -5,11 +5,12 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import { DELABARRA_URL } from "@/lib/links";
+import CircledWord from "@/components/CircledWord";
 
-/** Slides del hero. showRoleLabel muestra la etiqueta que señala a Estefi. */
+/** Slides del hero. */
 const heroImages = [
-    { src: "/images/equipo_makeit.jpeg", alt: "Equipo Make It", showRoleLabel: true },
-    { src: "/images/2Nueva.png", alt: "MAKE IT Creative Work", showRoleLabel: false },
+    { src: "/images/equipo_makeit.jpeg", alt: "Equipo Make It" },
+    { src: "/images/2Nueva.png", alt: "MAKE IT Creative Work" },
 ];
 
 export default function Hero() {
@@ -42,8 +43,10 @@ export default function Hero() {
 
                     <h1 className="text-[12vw] sm:text-[8vw] lg:text-[5.5vw] text-brand-black leading-[0.95] tracking-tighter mb-8 lg:mb-10">
                         CREATIVE MINDS, <br />
-                        IMPACTFUL <br />
-                        BRANDS.
+                        IMPACTFUL{" "}
+                        <CircledWord>
+                            <span className="font-highlight italic normal-case text-brand-stone">brands.</span>
+                        </CircledWord>
                     </h1>
 
                     <div className="max-w-2xl space-y-5">
@@ -58,10 +61,7 @@ export default function Hero() {
                             , integrando el concepto y la dirección creativa a eventos, activaciones y experiencias de marca para potenciar el alcance de cada proyecto, fortalecer su posicionamiento y conectar con sus audiencias.
                         </p>
                         <p className="text-lg md:text-xl text-brand-black/70 font-sans leading-relaxed">
-                            Cada una aporta su especialidad y juntas potencian tu negocio,
-                        </p>
-                        <p className="font-highlight italic text-2xl md:text-3xl text-brand-black leading-snug">
-                            Dos marcas con identidad propia y una misma mirada creativa.
+                            Cada agencia aporta su especialidad y juntas potencian tu negocio,
                         </p>
                     </div>
 
@@ -84,9 +84,9 @@ export default function Hero() {
                     initial={{ opacity: 0, scale: 0.9, x: 50 }}
                     animate={{ opacity: 1, scale: 1, x: 0 }}
                     transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
-                    className="lg:col-span-12 xl:col-span-5 relative h-100 sm:h-125 lg:h-150 w-full mt-8 lg:mt-0"
+                    className="lg:col-span-12 xl:col-span-5 relative w-full mt-8 lg:mt-0"
                 >
-                    <div className="relative w-full h-full rounded-[40px] md:rounded-[60px] overflow-hidden shadow-2xl">
+                    <div className="relative w-full h-100 sm:h-125 lg:h-150 rounded-[40px] md:rounded-[60px] overflow-hidden shadow-2xl">
                         <AnimatePresence mode="wait">
                             <motion.div
                                 key={currentIndex}
@@ -106,23 +106,22 @@ export default function Hero() {
                                 />
                                 {/* Subtle overlay for better visual depth */}
                                 <div className="absolute inset-0 bg-brand-black/5 pointer-events-none" />
-
-                                {heroImages[currentIndex].showRoleLabel && (
-                                    /* Etiqueta que señala a Estefi (al centro de la foto del equipo) */
-                                    <div className="absolute left-5 top-[22%] md:left-8 flex items-start gap-1 text-white pointer-events-none [filter:drop-shadow(0_2px_6px_rgba(0,0,0,0.6))]">
-                                        <div>
-                                            <p className="font-sans text-[10px] uppercase tracking-[0.3em] opacity-90">Dirección creativa</p>
-                                            <p className="font-highlight italic text-xl md:text-2xl">Estefi De La Barra</p>
-                                        </div>
-                                        <svg width="64" height="72" viewBox="0 0 64 72" fill="none" aria-hidden className="mt-5 shrink-0">
-                                            <path d="M4 6 C 34 4, 52 24, 54 62" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-                                            <path d="M46 54 L54 64 L60 52" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                                        </svg>
-                                    </div>
-                                )}
                             </motion.div>
                         </AnimatePresence>
                     </div>
+
+                    {/* Cita: pie del carrusel. En mobile va debajo; desde sm se monta sobre el borde inferior derecho de la foto. */}
+                    <figure className="relative z-10 mt-6 sm:-mt-14 sm:ml-auto sm:mr-6 sm:max-w-sm bg-background rounded-3xl shadow-xl px-8 pt-6 pb-8">
+                        <span aria-hidden className="block font-highlight text-6xl leading-none text-brand-stone h-8">
+                            &ldquo;
+                        </span>
+                        <blockquote className="font-highlight italic text-2xl md:text-3xl text-brand-black leading-snug">
+                            Dos marcas con identidad propia y una misma mirada creativa.
+                        </blockquote>
+                        <span aria-hidden className="block text-right font-highlight text-6xl leading-none text-brand-stone h-6 mt-2">
+                            &rdquo;
+                        </span>
+                    </figure>
                 </motion.div>
             </div>
         </section>
